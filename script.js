@@ -71,8 +71,12 @@ function submitDrawing() {
     '✨ Sketch sent! You absolute legend.'
   ];
   const confirmation = document.getElementById('confirmation');
-  confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
-  confirmation.style.display = 'block';
+confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
+confirmation.style.animation = 'none';
+void confirmation.offsetWidth; 
+confirmation.style.animation = 'popFade 3.5s ease-in-out forwards';
+confirmation.style.display = 'block';
+
 
   setTimeout(() => {
     confirmation.style.display = 'none';
