@@ -55,7 +55,7 @@ function submitDrawing() {
   const redirectInput = document.createElement('input');
   redirectInput.type = 'hidden';
   redirectInput.name = '_redirect';
-  redirectInput.value = 'https://joannelyse.github.io/sketchy-web/';
+  redirectInput.value = 'https://joannelyse.github.io/';
 
   const captchaInput = document.createElement('input');
   captchaInput.type = 'hidden';
