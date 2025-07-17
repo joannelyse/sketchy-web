@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Note Studio</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #ff3399;
+    }
+    canvas {
+      border: 2px solid #ff99cc;
+      background: #fff;
+      cursor: crosshair;
+    }
+    .controls {
+      margin-top: 1rem;
+    }
+    input[type="text"] {
+      margin-top: 1rem;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin: 1rem 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #ff66b2;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff3385;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Submit Your Masterpiece</h1>
+  <canvas id="drawingCanvas" width="300" height="300"></canvas>
+  <div class="controls">
+    <input type="text" id="title" placeholder="Sign your drawing..." />
+    <br />
+    <button onclick="clearCanvas()">Clear</button>
+    <button onclick="submitDrawing()">Submit</button>
+  </div>
+
+  <div id="confirmation" style="display: none; margin-top: 1rem; color: #ff3399; font-weight: bold;"></div>
+
+  <script>
+    const canvas = document.getElementById('drawingCanvas');
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+
+    canvas.addEventListener('mousedown', () => (drawing = true));
+    canvas.addEventListener('mouseup', () => (drawing = false));
+    canvas.addEventListener('mouseout', () => (drawing = false));
+    canvas.addEventListener('mousemove', draw);
+
+    function draw(e) {
+      if (!drawing) return;
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#000';
+
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+    }
+
+    function submitDrawing() {
+      const title = document.getElementById('title').value || 'Untitled';
+      const imageData = canvas.toDataURL('image/png');
+
+      // Create a form to send data
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://formsubmit.co/joannamc2003@gmail.com'; // Replace with your FormSubmit email endpoint
+
+      const titleInput = document.createElement('input');
+      titleInput.type = 'hidden';
+      titleInput.name = 'Title';
+      titleInput.value = title;
+
+      const imageInput = document.createElement('input');
+      imageInput.type = 'hidden';
+      imageInput.name = 'Image';
+      imageInput.value = imageData;
+
+      form.appendChild(titleInput);
+      form.appendChild(imageInput);
+
+      document.body.appendChild(form);
+      document.getElementById('confirmation').textContent = "🎉 Thank you! Your masterpiece has been sent ✨";
+      document.getElementById('confirmation').style.display = 'block';
+      setTimeout(() => form.submit(), 300);
+    }
+  </script>
+</body>
+</html>
