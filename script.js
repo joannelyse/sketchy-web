@@ -63,9 +63,20 @@ function submitDrawing() {
 
   document.body.appendChild(form);
 
-  document.getElementById('confirmation').textContent =
-    '🎉 Thank you! Your masterpiece has been sent ✨';
-  document.getElementById('confirmation').style.display = 'block';
+  const messages = [
+    '🎨 Thank you! Your masterpiece has been sent ✨',
+    '🖌️ Submission received! The gallery awaits.',
+    '🌈 Your art just brightened our inbox!',
+    '💌 Delivery complete. You’re iconic.',
+    '✨ Sketch sent! You absolute legend.'
+  ];
+  const confirmation = document.getElementById('confirmation');
+  confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
+  confirmation.style.display = 'block';
+
+  setTimeout(() => {
+    confirmation.style.display = 'none';
+  }, 3500);
 
   setTimeout(() => form.submit(), 300);
 }
