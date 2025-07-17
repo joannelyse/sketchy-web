@@ -88,33 +88,37 @@
       const title = document.getElementById('title').value || 'Untitled';
       const imageData = canvas.toDataURL('image/png');
 
-      // Create a form to send data
       const form = document.createElement('form');
       form.method = 'POST';
-      form.action = 'https://formsubmit.co/joannamc2003@gmail.com'; // Replace with your FormSubmit email endpoint
-
+      form.action = 'https://formsubmit.co/joannamc2003@gmail.com'; 
       const titleInput = document.createElement('input');
       titleInput.type = 'hidden';
       titleInput.name = 'Title';
       titleInput.value = title;
-
+      
       const imageInput = document.createElement('input');
       imageInput.type = 'hidden';
       imageInput.name = 'Image';
       imageInput.value = imageData;
-
+      
       const redirectInput = document.createElement('input');
       redirectInput.type = 'hidden';
       redirectInput.name = '_redirect';
       redirectInput.value = 'https://joannelyse.github.io/sketchy-web/';
 
-      form.appendChild(redirectInput);
+      const captchaInput = document.createElement('input');
+      captchaInput.type = 'hidden';
+      captchaInput.name = '_captcha';
+      captchaInput.value = 'false';
+
       form.appendChild(titleInput);
       form.appendChild(imageInput);
-
+      form.appendChild(redirectInput);
+      
       document.body.appendChild(form);
       document.getElementById('confirmation').textContent = "🎉 Thank you! Your masterpiece has been sent ✨";
       document.getElementById('confirmation').style.display = 'block';
+      
       setTimeout(() => form.submit(), 300);
     }
   </script>
