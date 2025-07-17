@@ -39,8 +39,8 @@ function submitDrawing() {
   const imageData = canvas.toDataURL('image/png');
 
   const form = document.createElement('form');
-  form.action = 'https://formsubmit.co/joannamc2003@gmail.com';
   form.method = 'POST';
+  form.action = 'https://getform.io/f/bllzkogb';
 
   const titleInput = document.createElement('input');
   titleInput.type = 'hidden';
@@ -54,22 +54,17 @@ function submitDrawing() {
 
   const redirectInput = document.createElement('input');
   redirectInput.type = 'hidden';
-  redirectInput.name = '_redirect';
+  redirectInput.name = 'redirect';
   redirectInput.value = 'https://joannelyse.github.io/sketchy-web/';
-
-  const captchaInput = document.createElement('input');
-  captchaInput.type = 'hidden';
-  captchaInput.name = '_captcha';
-  captchaInput.value = 'false';
 
   form.appendChild(titleInput);
   form.appendChild(imageInput);
   form.appendChild(redirectInput);
-  form.appendChild(captchaInput);
 
   document.body.appendChild(form);
 
-  document.getElementById('confirmation').textContent = '🎉 Thank you! Your masterpiece has been sent ✨';
+  document.getElementById('confirmation').textContent =
+    '🎉 Thank you! Your masterpiece has been sent ✨';
   document.getElementById('confirmation').style.display = 'block';
 
   setTimeout(() => form.submit(), 300);
