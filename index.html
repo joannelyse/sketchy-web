@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sticky Note Studio</title>
   <style>
     body {
@@ -43,19 +43,29 @@
     button:hover {
       background: #ff3385;
     }
+    #confirmation {
+      margin-top: 1rem;
+      color: #ff3399;
+      font-weight: bold;
+      display: none;
+    }
   </style>
 </head>
 <body>
   <h1>🎨 Submit Your Masterpiece</h1>
   <canvas id="drawingCanvas" width="300" height="300"></canvas>
+
   <div class="controls">
-    <input type="text" id="title" placeholder="Sign your drawing..." />
+    <input type="text" id="title" placeholder="Title your drawing..." />
     <br />
     <button onclick="clearCanvas()">Clear</button>
     <button onclick="submitDrawing()">Submit</button>
   </div>
 
-  <div id="confirmation" style="display: none; margin-top: 1rem; color: #ff3399; font-weight: bold;"></div>
+  <!-- Confirmation message -->
+  <div id="confirmation"></div>
+
+  <!-- Load external script -->
   <script src="script.js"></script>
 </body>
 </html>
