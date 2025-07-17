@@ -40,8 +40,7 @@ function submitDrawing() {
 
   const form = document.createElement('form');
   form.method = 'POST';
-  form.action = 'https://formsubmit.co/f/YOUR_SECURE_ID_HERE'; // 🔁 Replace with FormSubmit secure endpoint
-
+  form.action = 'https://formsubmit.co/itsbubblejem@gmail.com';
   const titleInput = document.createElement('input');
   titleInput.type = 'hidden';
   titleInput.name = 'Title';
