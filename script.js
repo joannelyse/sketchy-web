@@ -70,8 +70,14 @@ function submitDrawing() {
     '💌 Delivery complete. You’re iconic.',
     '✨ Sketch sent! You absolute legend.'
   ];
-  const confirmation = document.getElementById('confirmation');
+
+const confirmation = document.getElementById('confirmation');
 confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
+
+const ding = new Audio('ding.mp3');
+ding.volume = 0.3;
+ding.play();
+
 confirmation.style.animation = 'none';
 void confirmation.offsetWidth; 
 confirmation.style.animation = 'popFade 3.5s ease-in-out forwards';
