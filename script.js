@@ -39,8 +39,8 @@ function submitDrawing() {
   const imageData = canvas.toDataURL('image/png');
 
   const form = document.createElement('form');
-  form.method = 'POST';
   form.action = 'https://formsubmit.co/f/ee244204caf8fa6834e91d066c91e2c4';
+  form.method = 'POST';
 
   const titleInput = document.createElement('input');
   titleInput.type = 'hidden';
@@ -55,7 +55,7 @@ function submitDrawing() {
   const redirectInput = document.createElement('input');
   redirectInput.type = 'hidden';
   redirectInput.name = '_redirect';
-  redirectInput.value = 'https://joannelyse.github.io/';
+  redirectInput.value = 'https://joannelyse.github.io/sketchy-web/';
 
   const captchaInput = document.createElement('input');
   captchaInput.type = 'hidden';
