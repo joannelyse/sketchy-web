@@ -44,10 +44,20 @@
       background: #ff3385;
     }
     #confirmation {
-      margin-top: 1rem;
-      color: #ff3399;
-      font-weight: bold;
-      display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff0fa;
+    color: #ff3399;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    border: 2px solid #ff99cc;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+    animation: popFade 3s ease-in-out forwards;
     }
   </style>
 </head>
