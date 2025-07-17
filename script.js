@@ -39,7 +39,7 @@ function submitDrawing() {
   const imageData = canvas.toDataURL('image/png');
 
   const form = document.createElement('form');
-  form.action = 'https://formsubmit.co/itsbubblejem@gmail.com';
+  form.action = 'https://formsubmit.co/joannamc2003@gmail.com';
   form.method = 'POST';
 
   const titleInput = document.createElement('input');
