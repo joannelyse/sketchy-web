@@ -40,7 +40,7 @@ function submitDrawing() {
 
   const form = document.createElement('form');
   form.method = 'POST';
-  form.action = 'https://formsubmit.co/ee244204caf8fa6834e91d066c91e2c4';
+  form.action = 'https://formsubmit.co/f/ee244204caf8fa6834e91d066c91e2c4';
 
   const titleInput = document.createElement('input');
   titleInput.type = 'hidden';
