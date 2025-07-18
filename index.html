@@ -16,20 +16,6 @@
     h1 {
       color: #ff3399;
     }
-    canvas {
-      border: 2px solid #ff99cc;
-      background: #fff;
-      cursor: crosshair;
-    }
-    .controls {
-      margin-top: 1rem;
-    }
-    input[type="text"] {
-      margin-top: 1rem;
-      padding: 0.5rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
     button {
       margin: 1rem 0.5rem;
       padding: 0.5rem 1rem;
@@ -43,41 +29,21 @@
     button:hover {
       background: #ff3385;
     }
-    #confirmation {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff0fa;
-  color: #ff3399;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  padding: 1.2rem 1.5rem;
-  width: auto;
-  max-width: 90%;
-  border: 2px solid #ff99cc;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  display: none;
-  z-index: 1000;
-  animation: popFade 3.5s ease-in-out forwards;
-}
-
   </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>🎨 Submit Your Masterpiece</h1>
-  <canvas id="drawingCanvas" width="300" height="300"></canvas>
 
-  <div class="controls">
-    <input type="text" id="title" placeholder="Title your drawing..." />
-    <br />
-    <button onclick="clearCanvas()">Clear</button>
-    <button onclick="submitDrawing()">Submit</button>
+  <div class="drawing-wrapper">
+    <canvas id="drawingCanvas" width="300" height="300"></canvas>
+    <div class="controls">
+      <input type="text" id="title" placeholder="Title your drawing..." />
+      <button onclick="clearCanvas()">Clear</button>
+      <button onclick="submitDrawing()">Submit</button>
+    </div>
+    <div id="confirmation"></div>
   </div>
-
-  <div id="confirmation"></div>
 
   <script src="script.js"></script>
 </body>

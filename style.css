@@ -13,6 +13,10 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 canvas {
   width: 100%;
   max-width: 320px;
@@ -22,6 +26,13 @@ canvas {
   cursor: crosshair;
   touch-action: none;
   margin-bottom: 1rem;
+}
+
+.drawing-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .controls {
@@ -38,10 +49,7 @@ canvas {
   padding: 0.5rem;
   border-radius: 8px;
   border: 1px solid #ccc;
-  input[type="text"] {
-  font-size: 16px; 
-}
-
+  font-size: 16px;
 }
 
 .controls button {
@@ -49,6 +57,26 @@ canvas {
   margin-top: 0.5rem;
   padding: 0.6rem;
   font-size: 1rem;
+}
+
+#confirmation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff0fa;
+  color: #ff3399;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid #ff99cc;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 10;
+  animation: popFade 3.5s ease-in-out forwards;
+  max-width: 90%;
 }
 
 @media screen and (max-width: 480px) {
@@ -66,7 +94,4 @@ canvas {
     padding: 1rem 1.2rem;
     max-width: 90%;
   }
-}
-* {
-  box-sizing: border-box;
 }
