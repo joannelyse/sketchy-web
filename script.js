@@ -120,15 +120,6 @@ const ding = new Audio('ding.mp3');
 ding.volume = 0.3;
 ding.play();
 
-confirmation.style.animation = 'none';
-void confirmation.offsetWidth; 
-confirmation.style.animation = 'popFade 3.5s ease-in-out forwards';
 confirmation.style.display = 'block';
-
-
-  setTimeout(() => {
-    confirmation.style.display = 'none';
-  }, 3500);
-
-  setTimeout(() => form.submit(), 300);
+setTimeout(() => form.submit(), 300);
 }

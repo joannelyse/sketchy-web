@@ -75,8 +75,7 @@ canvas {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   display: none;
   z-index: 10;
-  animation: popFade 3.5s ease-in-out forwards;
-
+  
   width: 300px;         
   max-width: 90%;
   min-height: 80px;     
