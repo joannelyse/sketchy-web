@@ -12,3 +12,58 @@
     opacity: 0;
   }
 }
+
+canvas {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border: 2px solid #ff99cc;
+  background: #fff;
+  cursor: crosshair;
+  touch-action: none;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls input[type="text"] {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.controls button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  #confirmation {
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    max-width: 90%;
+  }
+}
+* {
+  box-sizing: border-box;
+}

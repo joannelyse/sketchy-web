@@ -2,29 +2,69 @@ const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d');
 let drawing = false;
 
-// Mouse event handlers
-canvas.addEventListener('mousedown', () => (drawing = true));
-canvas.addEventListener('mouseup', () => {
-  drawing = false;
-  ctx.beginPath();
-});
-canvas.addEventListener('mouseout', () => {
-  drawing = false;
-  ctx.beginPath();
-});
+// Mouse events
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseout', stopDrawing);
 canvas.addEventListener('mousemove', draw);
 
-// Drawing function
+// Touch events
+canvas.addEventListener('touchstart', startDrawingTouch, { passive: false });
+canvas.addEventListener('touchend', stopDrawing);
+canvas.addEventListener('touchcancel', stopDrawing);
+canvas.addEventListener('touchmove', drawTouch, { passive: false });
+
+// Mouse functions
+function startDrawing() {
+  drawing = true;
+}
+
+function stopDrawing() {
+  drawing = false;
+  ctx.beginPath();
+}
+
 function draw(e) {
   if (!drawing) return;
   ctx.lineWidth = 3;
   ctx.lineCap = 'round';
   ctx.strokeStyle = '#000';
 
-  ctx.lineTo(e.offsetX, e.offsetY);
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  ctx.lineTo(x, y);
   ctx.stroke();
   ctx.beginPath();
-  ctx.moveTo(e.offsetX, e.offsetY);
+  ctx.moveTo(x, y);
+}
+
+// Touch functions
+function startDrawingTouch(e) {
+  e.preventDefault();
+  drawing = true;
+  const rect = canvas.getBoundingClientRect();
+  const touch = e.touches[0];
+  const x = touch.clientX - rect.left;
+  const y = touch.clientY - rect.top;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+}
+
+function drawTouch(e) {
+  e.preventDefault();
+  if (!drawing) return;
+
+  const rect = canvas.getBoundingClientRect();
+  const touch = e.touches[0];
+  const x = touch.clientX - rect.left;
+  const y = touch.clientY - rect.top;
+
+  ctx.lineTo(x, y);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x, y);
 }
 
 // Clear canvas function
