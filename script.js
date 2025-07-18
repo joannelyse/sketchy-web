@@ -114,6 +114,8 @@ function submitDrawing() {
 
 document.getElementById('title').blur();
 window.scrollTo({ top: 0, behavior: 'smooth' });
+
+const confirmation = document.getElementById('confirmation');
 confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
 
 const ding = new Audio('ding.mp3');
