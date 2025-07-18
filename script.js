@@ -77,6 +77,7 @@ function clearCanvas() {
 function submitDrawing() {
   const title = document.getElementById('title').value || 'Untitled';
   const imageData = canvas.toDataURL('image/png');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const form = document.createElement('form');
   form.method = 'POST';
@@ -111,7 +112,8 @@ function submitDrawing() {
     '✨ Sketch sent! You absolute legend.'
   ];
 
-const confirmation = document.getElementById('confirmation');
+document.getElementById('title').blur();
+window.scrollTo({ top: 0, behavior: 'smooth' });
 confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
 
 const ding = new Audio('ding.mp3');
