@@ -45,7 +45,7 @@
     }
     #confirmation {
   position: fixed;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff0fa;
@@ -53,12 +53,12 @@
   font-weight: bold;
   font-size: 1.1rem;
   text-align: center;
-  padding: 1.2rem 2rem;
-  width: fit-content;
-  max-width: 80%;
+  padding: 1.2rem 1.5rem;
+  width: auto;
+  max-width: 90%;
   border: 2px solid #ff99cc;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   display: none;
   z-index: 1000;
   animation: popFade 3.5s ease-in-out forwards;
@@ -77,10 +77,8 @@
     <button onclick="submitDrawing()">Submit</button>
   </div>
 
-  <!-- Confirmation message -->
   <div id="confirmation"></div>
 
-  <!-- Load external script -->
   <script src="script.js"></script>
 </body>
 </html>
