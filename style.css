@@ -129,6 +129,9 @@ canvas {
   align-items: flex-end;
   margin-top: 0.5rem;
   height: 30px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .brush-size {
