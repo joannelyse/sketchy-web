@@ -125,34 +125,15 @@ canvas {
 
 .brush-options {
   display: flex;
-  justify-content: center;
-  align-items: flex-end; 
-  gap: 1.2rem;
-  height: 32px;  
+  gap: 1rem;
   margin-top: 0.5rem;
 }
 
 .brush-size {
   background: #000;
   border-radius: 50%;
-  border: 2px solid #ccc;
   cursor: pointer;
-  display: inline-block;
-}
-
-.brush-small {
-  width: 8px;
-  height: 8px;
-}
-
-.brush-medium {
-  width: 16px;
-  height: 16px;
-}
-
-.brush-large {
-  width: 28px;
-  height: 28px;
+  border: 2px solid #ccc;
 }
 
 .color-swatch.active,
