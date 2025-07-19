@@ -47,9 +47,9 @@ function stopDrawing() {
 
 function draw(e) {
   if (!drawing) return;
-  ctx.lineWidth = 3;
+  ctx.lineWidth = brushSize;
   ctx.lineCap = 'round';
-  ctx.strokeStyle = '#000';
+  ctx.strokeStyle = brushColor;
 
   const rect = canvas.getBoundingClientRect();
   const x = e.clientX - rect.left;
@@ -77,14 +77,14 @@ function drawTouch(e) {
   e.preventDefault();
   if (!drawing) return;
 
+  ctx.lineWidth = brushSize;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = brushColor;
+
   const rect = canvas.getBoundingClientRect();
   const touch = e.touches[0];
   const x = touch.clientX - rect.left;
   const y = touch.clientY - rect.top;
-
-  ctx.lineWidth = brushSize;
-  ctx.lineCap = 'round';
-  ctx.strokeStyle = brushColor;
 
   ctx.lineTo(x, y);
   ctx.stroke();
