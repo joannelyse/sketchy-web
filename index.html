@@ -37,21 +37,27 @@
 
   <div class="drawing-wrapper">
     <div class="sidebar">
-  <h3>Color</h3>
+  <div class="color-label">Color:</div>
   <div class="color-options">
-    <button class="color-swatch" data-color="#000000" style="background: #000;"></button>
-    <button class="color-swatch" data-color="#ff3399" style="background: #ff3399;"></button>
-    <button class="color-swatch" data-color="#00bfff" style="background: #00bfff;"></button>
-    <button class="color-swatch" data-color="#32cd32" style="background: #32cd32;"></button>
+    <div class="color-swatch" data-color="#ff0000" style="background: #ff0000;"></div>
+    <div class="color-swatch" data-color="#ff9900" style="background: #ff9900;"></div>
+    <div class="color-swatch" data-color="#ffff00" style="background: #ffff00;"></div>
+    <div class="color-swatch" data-color="#33cc33" style="background: #33cc33;"></div>
+    <div class="color-swatch" data-color="#ff99cc" style="background: #ff99cc;"></div>
+    <div class="color-swatch" data-color="#00ccff" style="background: #00ccff;"></div>
+    <div class="color-swatch" data-color="#9933cc" style="background: #9933cc;"></div>
+    <div class="color-swatch" data-color="#000000" style="background: #000000;"></div>
+    <div class="color-swatch eraser" data-color="#ffffff" title="Eraser">🧽</div>
   </div>
 
-  <h3>Brush</h3>
+  <div class="brush-label">Brush:</div>
   <div class="brush-options">
-    <button class="brush-size" data-size="2">Thin</button>
-    <button class="brush-size" data-size="5">Medium</button>
-    <button class="brush-size" data-size="8">Thick</button>
+    <div class="brush-size" data-size="3" style="width: 10px; height: 10px;"></div>
+    <div class="brush-size" data-size="7" style="width: 20px; height: 20px;"></div>
+    <div class="brush-size" data-size="12" style="width: 30px; height: 30px;"></div>
   </div>
 </div>
+
     <canvas id="drawingCanvas" width="300" height="300"></canvas>
     <div class="controls">
       <input type="text" id="title" placeholder="Title your drawing..." />

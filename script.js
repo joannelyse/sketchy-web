@@ -19,8 +19,7 @@ canvas.addEventListener('touchmove', drawTouch, { passive: false });
 document.querySelectorAll('.color-swatch').forEach(btn => {
   btn.addEventListener('click', () => {
     brushColor = btn.dataset.color;
-
-    document.querySelectorAll('.color-swatch').forEach(swatch => swatch.classList.remove('active'));
+    document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
 });
@@ -28,12 +27,10 @@ document.querySelectorAll('.color-swatch').forEach(btn => {
 document.querySelectorAll('.brush-size').forEach(btn => {
   btn.addEventListener('click', () => {
     brushSize = parseInt(btn.dataset.size);
-
-    document.querySelectorAll('.brush-size').forEach(sizeBtn => sizeBtn.classList.remove('active'));
+    document.querySelectorAll('.brush-size').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
 });
-
 
 // Mouse functions
 function startDrawing() {
