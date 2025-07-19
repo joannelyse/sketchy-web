@@ -4,35 +4,52 @@ let drawing = false;
 let brushColor = '#000';
 let brushSize = 3;
 
-// Tool selection
 let currentTool = 'draw';
 
-document.querySelectorAll('.tool').forEach(btn => {
+// Tool buttons
+const toolButtons = document.querySelectorAll('.tool');
+toolButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.tool').forEach(b => b.classList.remove('active'));
+    toolButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    currentTool = btn.dataset.tool || 'erase';
+
     if (btn.classList.contains('eraser')) {
       brushColor = btn.dataset.color;
+      currentTool = 'erase';
+    } else if (btn.classList.contains('brush-toggle')) {
+      document.querySelector('.brush-options').classList.toggle('hidden');
+    } else {
+      currentTool = btn.dataset.tool;
     }
   });
 });
 
-document.querySelectorAll('.color').forEach(btn => {
+// Color buttons
+const colorButtons = document.querySelectorAll('.color');
+colorButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     brushColor = btn.dataset.color;
-    document.querySelectorAll('.color').forEach(b => b.classList.remove('active'));
+    colorButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
 });
 
-// Mouse events
+// Brush size buttons
+const sizeButtons = document.querySelectorAll('.brush-size');
+sizeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    brushSize = parseInt(btn.dataset.size);
+    sizeButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Drawing handlers
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mouseup', stopDrawing);
 canvas.addEventListener('mouseout', stopDrawing);
 canvas.addEventListener('mousemove', draw);
 
-// Touch events
 canvas.addEventListener('touchstart', startDrawingTouch, { passive: false });
 canvas.addEventListener('touchend', stopDrawing);
 canvas.addEventListener('touchcancel', stopDrawing);
@@ -40,7 +57,7 @@ canvas.addEventListener('touchmove', drawTouch, { passive: false });
 
 function startDrawing(e) {
   drawing = true;
-  draw(e); // trigger initial draw
+  draw(e);
 }
 
 function stopDrawing() {
@@ -78,7 +95,6 @@ function startDrawingTouch(e) {
 function drawTouch(e) {
   e.preventDefault();
   if (!drawing) return;
-
   ctx.lineWidth = brushSize;
   ctx.lineCap = 'round';
   ctx.strokeStyle = brushColor;
