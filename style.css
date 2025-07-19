@@ -132,12 +132,12 @@ canvas {
 }
 
 .brush-size {
-  display: inline-block;
-  vertical-align: bottom;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid #ccc;
   background: #000;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 5px;
+  align-self: flex-end;
 }
 
 .brush-size.small {
