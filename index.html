@@ -2,80 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>This is some Sketchy Stuff</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketchy App Redesign</title>
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    body {
-      font-family: 'Comic Neue', cursive;
-      background: #ffe6f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-    }
-    h1 {
-      color: #ff3399;
-    }
-    button {
-      margin: 1rem 0.5rem;
-      padding: 0.5rem 1rem;
-      background: #ff66b2;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #ff3385;
-    }
-  </style>
 </head>
 <body>
-  <h1> Submit Your Sketch 🎨</h1>
-
- <div class="drawing-wrapper">
-
-  <div class="sidebar">
-    <div class="color-group">
-      <div class="color-label">Color:</div>
-      <div class="color-options">
-        <div class="color-swatch" data-color="#ff0000" style="background: #ff0000;"></div>
-        <div class="color-swatch" data-color="#ff9900" style="background: #ff9900;"></div>
-        <div class="color-swatch" data-color="#ffff00" style="background: #ffff00;"></div>
-        <div class="color-swatch" data-color="#33cc33" style="background: #33cc33;"></div>
-        <div class="color-swatch" data-color="#ff99cc" style="background: #ff99cc;"></div>
-        <div class="color-swatch" data-color="#00ccff" style="background: #00ccff;"></div>
-        <div class="color-swatch" data-color="#9933cc" style="background: #9933cc;"></div>
-        <div class="color-swatch" data-color="#000000" style="background: #000000;"></div>
-        <div class="color-swatch eraser" data-color="#ffffff" title="Eraser">🧽</div>
-      </div>
+  <div class="app-wrapper">
+    <div class="toolbar">
+      <div class="tool" data-tool="draw">✏️</div>
+      <div class="tool" data-tool="paint">🎨</div>
+      <div class="tool" data-tool="fill">🪣</div>
+      <div class="tool eraser" data-color="#ffffff">🧽</div>
     </div>
 
-    <div class="brush-group">
-      <div class="brush-label">Brush:</div>
-      <div class="brush-options">
-        <div class="brush-size small" data-size="3"></div>
-        <div class="brush-size medium" data-size="6"></div>
-        <div class="brush-size large" data-size="10"></div>
+    <div class="drawing-area">
+      <div class="canvas-wrapper">
+        <canvas id="drawingCanvas" width="300" height="300"></canvas>
+      </div>
+
+      <div class="color-palette">
+        <div class="color" data-color="#ff0000" style="background:#ff0000;"></div>
+        <div class="color" data-color="#ff9900" style="background:#ff9900;"></div>
+        <div class="color" data-color="#ffff00" style="background:#ffff00;"></div>
+        <div class="color" data-color="#33cc33" style="background:#33cc33;"></div>
+        <div class="color" data-color="#ff99cc" style="background:#ff99cc;"></div>
+        <div class="color" data-color="#00ccff" style="background:#00ccff;"></div>
+        <div class="color" data-color="#9933cc" style="background:#9933cc;"></div>
+        <div class="color" data-color="#000000" style="background:#000000;"></div>
+      </div>
+
+      <div class="controls">
+        <input type="text" id="title" placeholder="Title your drawing...">
+        <button onclick="clearCanvas()">🗑 Clear</button>
+        <button onclick="submitDrawing()">📤 Submit</button>
       </div>
     </div>
   </div>
-
-</div>
-
-    <canvas id="drawingCanvas" width="300" height="300"></canvas>
-    <div class="controls">
-      <input type="text" id="title" placeholder="Title your drawing..." />
-      <button onclick="clearCanvas()">Clear</button>
-      <button onclick="submitDrawing()">Submit</button>
-    </div>
-    <div id="confirmation"></div>
-  </div>
-
+  <div id="confirmation"></div>
   <script src="script.js"></script>
 </body>
 </html>

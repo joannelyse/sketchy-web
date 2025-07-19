@@ -1,177 +1,154 @@
-* {
-  box-sizing: border-box;
+body {
+  background: #ffeaf4;
+  font-family: 'Comic Neue', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  border: 4px solid #ffb3d9;
+  border-radius: 20px;
+  background: #fff0f6;
+  padding: 1rem;
+  gap: 1.5rem;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool {
+  width: 44px;
+  height: 44px;
+  background: #ffe0f0;
+  border: 2px solid #ff99cc;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.tool:hover {
+  transform: scale(1.1);
+}
+
+.tool.active {
+  background: #ffccdd;
+  border-color: #ff3399;
+}
+
+.drawing-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.canvas-wrapper {
+  border: 3px solid #ff99cc;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.5rem;
 }
 
 canvas {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  border: 2px solid #ff99cc;
+  width: 300px;
+  height: 300px;
   background: #fff;
-  cursor: crosshair;
   touch-action: none;
-  margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
-.drawing-wrapper {
-  position: relative;
+.color-palette {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.controls {
-  width: 100%;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.controls input[type="text"] {
-  width: 100%;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.controls button {
-  width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.6rem;
-  font-size: 1rem;
-}
-
-#confirmation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff0fa;
-  color: #ff3399;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  padding: 1.2rem 2rem;
-  border: 2px solid #ff99cc;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  display: none;
-  z-index: 10;
-
-  width: 300px;         
-  max-width: 90%;
-  min-height: 80px;     
-  line-height: 1.4;     
-  white-space: normal;  
-  animation: none !important;
-}
-
-
-@media screen and (max-width: 480px) {
-  body {
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  #confirmation {
-    width: 90%;
-    font-size: 1rem;
-    padding: 1rem 1.2rem;
-  }
-}
-
-.sidebar {
-  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
   flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
   justify-content: center;
-  margin-bottom: 1rem;
 }
 
-.color-group,
-.brush-group {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0;
-}
-
-.color-label,
-.brush-label {
-  font-weight: bold;
-  margin-right: 0.3rem;
-  white-space: nowrap;
-}
-
-.color-options,
-.brush-options {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.color-swatch {
+.color {
   width: 28px;
   height: 28px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 2px solid #000;
   cursor: pointer;
 }
 
-.color-swatch.eraser {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  background: #fff;
-  color: #000;
-}
-
-.brush-options {
-  display: flex;
-  gap: 1.2rem;
-  align-items: flex-end;
-  height: 30px;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  user-select: none;
-}
-
-.brush-size {
-  display: inline-block;
-  border-radius: 50%;
-  background-color: #000;
-  border: 2px solid #ccc;
-  cursor: pointer;
-  align-self: flex-end;
-}
-
-.brush-size.small {
-  width: 10px;
-  height: 10px;
-}
-.brush-size.medium {
-  width: 18px;
-  height: 18px;
-}
-.brush-size.large {
-  width: 28px;
-  height: 28px;
-}
-
-.color-swatch.active,
-.brush-size.active {
+.color.active {
   outline: 2px solid #ff3399;
   outline-offset: 2px;
 }
 
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
 
+.controls input {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.controls button {
+  background: #ff66b2;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+.controls button:hover {
+  background: #ff3385;
+}
+
+#confirmation {
+  margin-top: 1rem;
+  color: #ff3399;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .app-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toolbar {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .drawing-area {
+    width: 100%;
+  }
+}

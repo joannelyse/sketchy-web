@@ -4,6 +4,28 @@ let drawing = false;
 let brushColor = '#000';
 let brushSize = 3;
 
+// Tool selection
+let currentTool = 'draw';
+
+document.querySelectorAll('.tool').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tool').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentTool = btn.dataset.tool || 'erase';
+    if (btn.classList.contains('eraser')) {
+      brushColor = btn.dataset.color;
+    }
+  });
+});
+
+document.querySelectorAll('.color').forEach(btn => {
+  btn.addEventListener('click', () => {
+    brushColor = btn.dataset.color;
+    document.querySelectorAll('.color').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
 // Mouse events
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mouseup', stopDrawing);
@@ -16,25 +38,9 @@ canvas.addEventListener('touchend', stopDrawing);
 canvas.addEventListener('touchcancel', stopDrawing);
 canvas.addEventListener('touchmove', drawTouch, { passive: false });
 
-document.querySelectorAll('.color-swatch').forEach(btn => {
-  btn.addEventListener('click', () => {
-    brushColor = btn.dataset.color;
-    document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
-
-document.querySelectorAll('.brush-size').forEach(btn => {
-  btn.addEventListener('click', () => {
-    brushSize = parseInt(btn.dataset.size);
-    document.querySelectorAll('.brush-size').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
-
-// Mouse functions
-function startDrawing() {
+function startDrawing(e) {
   drawing = true;
+  draw(e); // trigger initial draw
 }
 
 function stopDrawing() {
@@ -58,7 +64,6 @@ function draw(e) {
   ctx.moveTo(x, y);
 }
 
-// Touch functions
 function startDrawingTouch(e) {
   e.preventDefault();
   drawing = true;
@@ -89,13 +94,11 @@ function drawTouch(e) {
   ctx.moveTo(x, y);
 }
 
-// Clear canvas function
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
 }
 
-// Submit function
 function submitDrawing() {
   const title = document.getElementById('title').value || 'Untitled';
   const imageData = canvas.toDataURL('image/png');
@@ -129,20 +132,18 @@ function submitDrawing() {
   const messages = [
     'Your masterpiece has been sent ✨',
     'Submission received! The gallery awaits 🖌️',
-    'Your art just brightened our inbox! 💌',
+    'Your art just brightened our inbox! 📬',
     'Sketch sent! Very creative Picasso 👨‍🎨.'
   ];
 
-document.getElementById('title').blur();
-window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('title').blur();
+  const confirmation = document.getElementById('confirmation');
+  confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
 
-const confirmation = document.getElementById('confirmation');
-confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
+  const ding = new Audio('ding.mp3');
+  ding.volume = 0.3;
+  ding.play();
 
-const ding = new Audio('ding.mp3');
-ding.volume = 0.3;
-ding.play();
-
-confirmation.style.display = 'block';
-setTimeout(() => form.submit(), 300);
-}
+  confirmation.style.display = 'block';
+  setTimeout(() => form.submit(), 300);
+} 
