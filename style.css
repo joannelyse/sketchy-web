@@ -125,8 +125,10 @@ canvas {
 
 .brush-options {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
+  align-items: flex-end; 
   margin-top: 0.5rem;
+  height: 30px; 
 }
 
 .brush-size {
@@ -134,6 +136,8 @@ canvas {
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid #ccc;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
 .color-swatch.active,

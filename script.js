@@ -127,11 +127,10 @@ function submitDrawing() {
   document.body.appendChild(form);
 
   const messages = [
-    '🎨 Thank you! Your masterpiece has been sent ✨',
-    '🖌️ Submission received! The gallery awaits.',
-    '🌈 Your art just brightened our inbox!',
-    '💌 Delivery complete. You’re iconic.',
-    '✨ Sketch sent! You absolute legend.'
+    'Your masterpiece has been sent ✨',
+    'Submission received! The gallery awaits 🖌️',
+    'Your art just brightened our inbox! 💌',
+    'Sketch sent! Very creative Picasso 👨‍🎨.'
   ];
 
 document.getElementById('title').blur();
