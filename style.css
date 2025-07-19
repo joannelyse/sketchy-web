@@ -156,9 +156,35 @@ canvas {
 .brush-options {
   display: flex;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   justify-content: center;
 }
+
 .brush-options.hidden {
   display: none;
 }
+
+.brush-size {
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.brush-size.medium {
+  width: 20px;
+  height: 20px;
+}
+
+.brush-size.large {
+  width: 28px;
+  height: 28px;
+}
+
+.brush-size.active {
+  outline: 2px solid #ff3399;
+  outline-offset: 2px;
+}
+
