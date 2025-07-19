@@ -132,12 +132,25 @@ canvas {
 }
 
 .brush-size {
-  background: #000;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #ccc;
   display: inline-block;
   vertical-align: bottom;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #000;
+}
+
+.brush-size.small {
+  width: 10px;
+  height: 10px;
+}
+.brush-size.medium {
+  width: 18px;
+  height: 18px;
+}
+.brush-size.large {
+  width: 28px;
+  height: 28px;
 }
 
 .color-swatch.active,
