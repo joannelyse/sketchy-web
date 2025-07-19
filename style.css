@@ -89,11 +89,14 @@ canvas {
 
 .sidebar {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
+  align-items: flex-end;
 }
+
 
 .color-label, .brush-label {
   font-weight: bold;
