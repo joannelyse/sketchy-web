@@ -66,6 +66,7 @@ canvas {
   min-height: 80px;     
   line-height: 1.4;     
   white-space: normal;  
+  animation: none !important;
 }
 
 
@@ -84,4 +85,47 @@ canvas {
     font-size: 1rem;
     padding: 1rem 1.2rem;
   }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.color-options, .brush-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  outline: none;
+}
+
+.brush-size {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.color-swatch.active {
+  border: 2px solid #ff3399;
+  box-shadow: 0 0 4px #ff99cc;
+}
+
+.brush-size.active {
+  border-color: #ff3399;
+  background: #fff0fa;
+  font-weight: bold;
 }

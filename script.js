@@ -1,6 +1,8 @@
 const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d');
 let drawing = false;
+let brushColor = '#000';
+let brushSize = 3;
 
 // Mouse events
 canvas.addEventListener('mousedown', startDrawing);
@@ -13,6 +15,25 @@ canvas.addEventListener('touchstart', startDrawingTouch, { passive: false });
 canvas.addEventListener('touchend', stopDrawing);
 canvas.addEventListener('touchcancel', stopDrawing);
 canvas.addEventListener('touchmove', drawTouch, { passive: false });
+
+document.querySelectorAll('.color-swatch').forEach(btn => {
+  btn.addEventListener('click', () => {
+    brushColor = btn.dataset.color;
+
+    document.querySelectorAll('.color-swatch').forEach(swatch => swatch.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+document.querySelectorAll('.brush-size').forEach(btn => {
+  btn.addEventListener('click', () => {
+    brushSize = parseInt(btn.dataset.size);
+
+    document.querySelectorAll('.brush-size').forEach(sizeBtn => sizeBtn.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
 
 // Mouse functions
 function startDrawing() {
@@ -60,6 +81,10 @@ function drawTouch(e) {
   const touch = e.touches[0];
   const x = touch.clientX - rect.left;
   const y = touch.clientY - rect.top;
+
+  ctx.lineWidth = brushSize;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = brushColor;
 
   ctx.lineTo(x, y);
   ctx.stroke();
