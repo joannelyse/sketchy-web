@@ -89,24 +89,34 @@ canvas {
 
 .sidebar {
   display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  justify-content: center;
   flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
   margin-bottom: 1rem;
-  align-items: flex-end;
 }
 
-
-.color-label, .brush-label {
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-.color-options {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.color-group,
+.brush-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 0.5rem;
+  margin-top: 0;
+}
+
+.color-label,
+.brush-label {
+  font-weight: bold;
+  margin-right: 0.3rem;
+  white-space: nowrap;
+}
+
+.color-options,
+.brush-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .color-swatch {
@@ -130,7 +140,6 @@ canvas {
   display: flex;
   gap: 1.2rem;
   align-items: flex-end;
-  margin-top: 0.5rem;
   height: 30px;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
