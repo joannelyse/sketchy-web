@@ -38,9 +38,9 @@
   <h1> Submit Your Sketch 🎨</h1>
 
   <div class="drawing-wrapper">
-    <div class="sidebar">
-  <div class="color-label">Color:</div>
-  <div class="color-options">
+    <div class="color-group">
+        <div class="color-label">Color:</div>
+        <div class="color-options">
     <div class="color-swatch" data-color="#ff0000" style="background: #ff0000;"></div>
     <div class="color-swatch" data-color="#ff9900" style="background: #ff9900;"></div>
     <div class="color-swatch" data-color="#ffff00" style="background: #ffff00;"></div>
@@ -50,15 +50,17 @@
     <div class="color-swatch" data-color="#9933cc" style="background: #9933cc;"></div>
     <div class="color-swatch" data-color="#000000" style="background: #000000;"></div>
     <div class="color-swatch eraser" data-color="#ffffff" title="Eraser">🧽</div>
-  </div>
-
-  <div class="brush-label">Brush:</div>
-  <div class="brush-options">
-    <div class="brush-size small" data-size="3"></div>
-    <div class="brush-size medium" data-size="6"></div>
-    <div class="brush-size large" data-size="10"></div>
+    </div>
 </div>
 
+  <div class="brush-group">
+    <div class="brush-label">Brush:</div>
+    <div class="brush-options">
+        <div class="brush-size small" data-size="3"></div>
+        <div class="brush-size medium" data-size="6"></div>
+        <div class="brush-size large" data-size="10"></div>
+    </div>
+</div>
 </div>
 
     <canvas id="drawingCanvas" width="300" height="300"></canvas>
