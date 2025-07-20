@@ -202,10 +202,12 @@ canvas {
 
 .labeled-input {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.5rem;
   width: 100%;
-  max-width: 250px;
+  margin-bottom: 0.5rem;
 }
 
 .labeled-input label {
@@ -213,6 +215,7 @@ canvas {
   font-weight: bold;
   font-size: 0.95rem;
   color: #555;
+  min-width: 50px; 
 }
 
 .labeled-input input {
