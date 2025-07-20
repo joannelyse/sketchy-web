@@ -8,17 +8,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app-wrapper">
-    <div class="toolbar">
-      <div class="tool active" data-tool="draw">✏️</div>
-      <div class="tool eraser" data-color="#ffffff">🧽</div>
-      <div class="tool brush-toggle">📏</div>
-      <div class="brush-options hidden">
-        <div class="brush-size small" data-size="3"></div>
-        <div class="brush-size medium" data-size="6"></div>
-        <div class="brush-size large" data-size="10"></div>
-      </div>
-    </div>
+<div class="app-wrapper">
+  <div class="toolbar">
+    <div class="tool active" data-tool="draw">✏️</div>
+    <div class="tool eraser" data-color="#ffffff">🧽</div>
+    <div class="tool brush-toggle">📏</div>
+  </div>
+
+  <div class="brush-options hidden">
+    <div class="brush-size small" data-size="3"></div>
+    <div class="brush-size medium" data-size="6"></div>
+    <div class="brush-size large" data-size="10"></div>
+  </div>
 
     <div class="drawing-area">
       <div class="canvas-wrapper">
@@ -38,7 +39,7 @@
 
       <div class="controls">
         <input type="text" id="title" placeholder="Title your drawing...">
-        <button style="background-color: red;" onclick="clearCanvas()">Clear 🗑</button>
+        <button style="background-color: rgb(0, 162, 255);" onclick="clearCanvas()">Clear 🗑</button>
         <button onclick="submitDrawing()">Submit 📤</button>
       </div>
     </div>

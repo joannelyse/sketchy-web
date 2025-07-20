@@ -155,9 +155,9 @@ canvas {
 
 .brush-options {
   display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
   justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .brush-options.hidden {
@@ -165,22 +165,25 @@ canvas {
 }
 
 .brush-size {
-  width: 12px;
-  height: 12px;
-  background: #000;
-  border: 2px solid #ccc;
+  background-color: #000;
   border-radius: 50%;
+  border: 2px solid #ccc;
   cursor: pointer;
 }
 
+.brush-size.small {
+  width: 10px;
+  height: 10px;
+}
+
 .brush-size.medium {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .brush-size.large {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 .brush-size.active {
