@@ -252,6 +252,31 @@ canvas {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 250px;
+  margin-top: 0.5rem;
 }
+
+.button-row .action-btn {
+  flex: 1 1 120px;
+  max-width: 140px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+
+.clear-btn {
+  background-color: rgb(0, 162, 255);
+}
+
+.submit-btn {
+  background-color: #ff66b2;
+}
+
+.submit-btn:hover {
+  background-color: #ff3385;
+}
+
 
