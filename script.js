@@ -122,10 +122,9 @@ function clearCanvas() {
 
 function showConfirmationMessage() {
   const messages = [
-    'Your masterpiece has been sent ✨',
-    'Submission received! The gallery awaits 🖌️',
-    'Your art just brightened our inbox! 📬',
-    'Sketch sent! Very creative Picasso 👨‍🎨.'
+    'Your masterpiece was sent ✨',
+    'Submission received! 🖌️',
+    'Sketch sent! 👨‍🎨.'
   ];
   const confirmation = document.getElementById('confirmation');
   confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
