@@ -156,8 +156,10 @@ canvas {
 .brush-options {
   display: flex;
   justify-content: center;
+  align-items: flex-end;  
   gap: 1rem;
   margin-top: 1rem;
+  height: 30px; 
 }
 
 .brush-options.hidden {
@@ -169,6 +171,7 @@ canvas {
   border-radius: 50%;
   border: 2px solid #ccc;
   cursor: pointer;
+  align-self: flex-end;  
 }
 
 .brush-size.small {
