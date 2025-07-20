@@ -30,16 +30,22 @@ body {
 }
 
 .tool {
-  width: 52px;
-  height: 52px;
-  background: #ffe0f0;
-  border: 2px solid #ff99cc;
-  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.2s;
+  width: 44px;
+  height: 44px;
+  background: #ffe0f0;
+  border: 2px solid #ff99cc;
+  border-radius: 12px;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.tool img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .tool:hover {
