@@ -30,16 +30,16 @@ body {
 }
 
 .tool {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   background: #ffe0f0;
   border: 2px solid #ff99cc;
   border-radius: 12px;
-  font-size: 1.6rem;
-  text-align: center;
-  line-height: 40px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .tool:hover {
