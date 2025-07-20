@@ -130,23 +130,28 @@ canvas {
 }
 
 #confirmation {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffccdd;
-  color: #ff0066;
+  margin-top: 1rem;
+  color: #ff3399;
   font-weight: bold;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  z-index: 9999;
+  background: #fff0f6;
+  border: 2px solid #ffb3d9;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 90%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(255, 153, 204, 0.3);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   display: none;
-  font-size: 1.1rem;
-  max-width: 80%;
 }
 
+@media (max-width: 400px) {
+  #confirmation {
+    font-size: 0.95rem;
+    max-width: 320px;
+  }
+}
 
 @media (max-width: 600px) { 
   .app-wrapper {
