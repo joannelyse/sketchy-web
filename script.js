@@ -122,6 +122,7 @@ function clearCanvas() {
 
 function submitDrawing() {
   const title = document.getElementById('title').value || 'Untitled';
+  const author = document.getElementById('author').value || 'Anonymous';
   const imageData = canvas.toDataURL('image/png');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -134,6 +135,11 @@ function submitDrawing() {
   titleInput.name = 'Title';
   titleInput.value = title;
 
+  const authorInput = document.createElement('input');
+  authorInput.type = 'hidden';
+  authorInput.name = 'Author';
+  authorInput.value = author;
+
   const imageInput = document.createElement('input');
   imageInput.type = 'hidden';
   imageInput.name = 'Image';
@@ -145,6 +151,7 @@ function submitDrawing() {
   redirectInput.value = 'https://joannelyse.github.io/sketchy-web/';
 
   form.appendChild(titleInput);
+  form.appendChild(authorInput);
   form.appendChild(imageInput);
   form.appendChild(redirectInput);
 
