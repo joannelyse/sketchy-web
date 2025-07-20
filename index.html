@@ -9,13 +9,18 @@
 </head>
 <body>
   <div class="title-wrapper">
-  <h1>Submit Your Masterpiece <span class="emoji">🎨</span></h1>
+  <h1>Submit Your Masterpiece <img src="icons/paintbrush.png" alt="🎨" class="emoji-icon" /></h1>
 </div>
   <div class="toolbar">
-    <div class="tool-group">
-      <div class="tool active" data-tool="draw">✏️</div>
-      <div class="tool eraser" data-color="#ffffff">🧽</div>
-      <div class="tool brush-toggle">📏</div>
+  <div class="tool-group">
+    <div class="tool active" data-tool="draw">
+        <img src="assets/draw.png" alt="Draw Tool" class="icon">
+    </div>
+    <div class="tool eraser" data-color="#ffffff">
+        <img src="assets/eraser.png" alt="Eraser Tool" class="icon">
+    </div>
+    <div class="tool brush-toggle">
+        <img src="assets/ruler.png" alt="Brush Size" class="icon">
     </div>
     <div class="brush-options hidden">
       <div class="brush-size small" data-size="3"></div>
@@ -50,8 +55,8 @@
             <input type="text" id="author" placeholder="Sign your work...">
         </div>
         <div class="button-row">
-            <button class="action-btn clear-btn" onclick="clearCanvas()">Clear 🗑</button>
-            <button class="action-btn submit-btn" onclick="submitDrawing()">Submit 📤</button>
+            <button class="action-btn clear-btn" onclick="clearCanvas()">Clear</button>
+            <button class="action-btn submit-btn" onclick="submitDrawing()">Submit</button>
         </div>
     </div>
 </div>

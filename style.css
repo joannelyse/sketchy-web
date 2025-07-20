@@ -252,8 +252,16 @@ canvas {
   min-width: 0; 
 }
 
-.emoji {
-  font-size: 1.05em;
+.icon {
+  width: 32px;
+  height: 32px;
+  max-width: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.emoji-icon {
+  width: 1.2em;
+  height: 1.2em;
   vertical-align: middle;
 }
 
