@@ -1,8 +1,8 @@
 .title-wrapper {
   width: 100%;
+  padding: 0.5rem;
   text-align: center;
-  padding: 0 1rem;
-  margin-bottom: 1rem;
+  overflow: visible;
 }
 
 .title-heading {
@@ -10,20 +10,16 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  font-size: clamp(1.8rem, 8vw, 2.8rem); 
+  font-size: clamp(1.8rem, 7.5vw, 2.8rem);
   font-weight: bold;
   color: #ff3399;
   text-shadow: 1px 1px 0 #ffd6e8,
                2px 2px 2px #ffcce0,
                0 0 5px #ffe6f2;
-  flex-wrap: nowrap;
-  max-width: 100%;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 0.5rem; 
+  max-width: 100%;
+  padding: 0;
 }
-
 
 body {
   background: #ffeaf4;
@@ -273,7 +269,7 @@ canvas {
 }
 
 .emoji-icon {
-  width: clamp(32px, 8vw, 48px);
+  width: clamp(32px, 6vw, 42px);
   height: auto;
   flex-shrink: 0;
 }
