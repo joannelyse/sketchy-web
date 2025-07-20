@@ -266,9 +266,10 @@ canvas {
 }
 
 .emoji-icon {
-  width: 1.2em;
-  height: 1.2em;
+  width: 48px;
+  height: 48px;
   vertical-align: middle;
+  display: inline-block;
 }
 
 @media (max-width: 400px) {
