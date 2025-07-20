@@ -147,21 +147,26 @@ canvas {
 }
 
 #confirmation {
-  margin-top: 1rem;
+  display: none;
+  background-color: #fff;
   color: #ff3399;
   font-weight: bold;
   text-align: center;
-  background: #fff0f6;
-  border: 2px solid #ffb3d9;
-  border-radius: 12px;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #ff3399;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-size: 1.1rem;
+  border-radius: 0;
+  width: auto;
   max-width: 90%;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(255, 153, 204, 0.3);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  display: none;
+  white-space: nowrap;
 }
+
 
 @media (max-width: 400px) {
   #confirmation {
