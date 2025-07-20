@@ -130,7 +130,6 @@ canvas {
 
 @media (max-width: 600px) { 
   .app-wrapper {
-    flex-direction: column;
     align-items: center;
   }
 
