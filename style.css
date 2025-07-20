@@ -75,8 +75,8 @@ body {
 }
 
 canvas {
-  width: 300px;
-  height: 300px;
+  width: 306px;
+  height: 310px;
   background: #fff;
   touch-action: none;
   border-radius: 0;
