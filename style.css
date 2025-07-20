@@ -9,6 +9,7 @@ body {
   background: #ffeaf4;
   font-family: 'Comic Neue', cursive;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
