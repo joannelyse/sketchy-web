@@ -271,6 +271,10 @@ canvas {
   background-color: rgb(0, 162, 255);
 }
 
+.clear-btn:hover {
+  background-color: rgb(0, 140, 220);
+}
+
 .submit-btn {
   background-color: #ff66b2;
 }
