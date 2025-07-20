@@ -7,7 +7,7 @@
 }
 
 .title-wrapper h1 {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 4vw, 1.6rem); 
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
@@ -229,4 +229,15 @@ canvas {
   border: 1px solid #ccc;
   border-radius: 8px;
   min-width: 0; 
+}
+
+.emoji {
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+@media (max-width: 400px) {
+  .emoji {
+    font-size: 0.8em;
+  }
 }
