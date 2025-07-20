@@ -120,58 +120,57 @@ function clearCanvas() {
   ctx.beginPath();
 }
 
-function submitDrawing() {
-  const title = document.getElementById('title').value || 'Untitled';
-  const author = document.getElementById('author').value || 'Anonymous';
-  const imageData = canvas.toDataURL('image/png');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  const form = document.createElement('form');
-  form.method = 'POST';
-  form.action = 'https://getform.io/f/bllzkogb';
-
-  const titleInput = document.createElement('input');
-  titleInput.type = 'hidden';
-  titleInput.name = 'Title';
-  titleInput.value = title;
-
-  const authorInput = document.createElement('input');
-  authorInput.type = 'hidden';
-  authorInput.name = 'Author';
-  authorInput.value = author;
-
-  const imageInput = document.createElement('input');
-  imageInput.type = 'hidden';
-  imageInput.name = 'Image';
-  imageInput.value = imageData;
-
-  const redirectInput = document.createElement('input');
-  redirectInput.type = 'hidden';
-  redirectInput.name = 'redirect';
-  redirectInput.value = 'https://joannelyse.github.io/sketchy-web/';
-
-  form.appendChild(titleInput);
-  form.appendChild(authorInput);
-  form.appendChild(imageInput);
-  form.appendChild(redirectInput);
-
-  document.body.appendChild(form);
-
+function showConfirmationMessage() {
   const messages = [
     'Your masterpiece has been sent ✨',
     'Submission received! The gallery awaits 🖌️',
     'Your art just brightened our inbox! 📬',
     'Sketch sent! Very creative Picasso 👨‍🎨.'
   ];
-
-  document.getElementById('title').blur();
   const confirmation = document.getElementById('confirmation');
   confirmation.textContent = messages[Math.floor(Math.random() * messages.length)];
+  confirmation.style.display = 'block';
+  confirmation.style.position = 'fixed';
+  confirmation.style.top = '50%';
+  confirmation.style.left = '50%';
+  confirmation.style.transform = 'translate(-50%, -50%)';
+  confirmation.style.background = '#fff0f6';
+  confirmation.style.border = '2px solid #ff99cc';
+  confirmation.style.padding = '1rem 2rem';
+  confirmation.style.borderRadius = '12px';
+  confirmation.style.boxShadow = '0 4px 10px rgba(0,0,0,0.15)';
+  confirmation.style.zIndex = '1000';
 
   const ding = new Audio('ding.mp3');
   ding.volume = 0.3;
   ding.play();
+}
 
-  confirmation.style.display = 'block';
-  setTimeout(() => form.submit(), 300);
-} 
+function submitDrawing() {
+  const title = document.getElementById('title').value || 'Untitled';
+  const author = document.getElementById('author').value || 'Anonymous';
+  const imageData = canvas.toDataURL('image/png');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  showConfirmationMessage();
+
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = 'https://getform.io/f/bllzkogb';
+
+  form.appendChild(createHiddenInput('Title', title));
+  form.appendChild(createHiddenInput('Author', author));
+  form.appendChild(createHiddenInput('Image', imageData));
+  form.appendChild(createHiddenInput('redirect', 'https://joannelyse.github.io/sketchy-web/'));
+
+  document.body.appendChild(form);
+  form.submit();
+}
+
+function createHiddenInput(name, value) {
+  const input = document.createElement('input');
+  input.type = 'hidden';
+  input.name = name;
+  input.value = value;
+  return input;
+}
