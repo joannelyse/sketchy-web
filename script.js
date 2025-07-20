@@ -31,6 +31,11 @@ colorButtons.forEach(btn => {
     brushColor = btn.dataset.color;
     colorButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
+    // Auto-switch to pencil tool
+    currentTool = 'draw';
+    toolButtons.forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-tool="draw"]').classList.add('active');
   });
 });
 
