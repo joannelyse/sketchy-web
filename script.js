@@ -155,7 +155,7 @@ function submitDrawing() {
 
   const form = document.createElement('form');
   form.method = 'POST';
-  form.action = 'https://getform.io/f/bllzkogb';
+  form.action = 'https://getform.io/f/bgdlmqya';
 
   form.appendChild(createHiddenInput('Title', title));
   form.appendChild(createHiddenInput('Author', author));
